@@ -17,6 +17,7 @@ img{
     margin: 0 auto;
 }
 
+
 /* HEADER */
 
 .header{
@@ -64,10 +65,12 @@ img{
 /* INTRO */
 
 .intro{
+    max-height: 962px;
     min-height: 100vh;
     background: url("../img/intro_bg.jpg") no-repeat center;
     background-size: cover;
     padding-top: 263px;
+    /*padding-bottom: 223px;*/
 }
 
 .intro__title{
@@ -144,12 +147,12 @@ img{
 }
 
 .benefits__title{
-    width: 100%;
+    width: 92.2%;
     font-weight: 500;
     font-size: 35px;
     line-height: 42px;
     color: #102746;
-    padding: 93px 100px 88px 100px;
+    padding: 93px 0px 88px 100px;
     position: absolute;
     top: 0;
     left: 0;
@@ -209,3 +212,143 @@ img{
     /*Ссылки меняют свойства при наведении на них мышкой/фокусировке/при клике на них*/
     background: url(../img/svg/arrow.svg) no-repeat right center;
 }
+
+
+/* PLACES STYLES */
+
+.places{
+    max-width: 1262px;
+    margin: 0 auto;
+    margin-bottom: 131px;
+}
+
+.wrapper__large{
+    max-width: 1262px;
+    margin: 0 auto;
+}
+
+.section__title{
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    color: #102746;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section__title::after{
+    /*Линия под надписью*/
+    display: block;
+    content: '';
+    width: 253px;
+    height: 3px;
+    background-color: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.places__caption{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.places__view-all{
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #006DFE;
+    text-decoration: none;
+    padding-right: 59px;
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+}
+
+.places__view-all:hover, .places__view-all:focus, .places__view-all:active{
+    /*Ссылки меняют свойства при наведении на них мышкой/фокусировке/при клике на них*/
+    opacity: .65;
+}
+
+.places__title{
+    /*Чтобы колонки не налазили друг на друга при маленьком размере экрана*/
+    margin-right: 15px;
+}
+
+.places__cards{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
+
+.places__card{
+    position: relative;
+    overflow: hidden; /*При увеличении изображения при наведении на него, оно не будет вылазить за пределы контейнера*/
+}
+
+.places__card::after{
+    /*Затемнение на картинках (оверлэй)*/
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 24, 36, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.places__card:hover .places__card-pic{
+    /*Интерактивность при наведении*/
+    transform: scale(1.05);
+
+}
+
+.places__card-title{
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 27px;
+    left: 29px;
+    z-index: 3;
+}
+
+.places__card_size_lg{
+    grid-column: span 3;
+}
+
+.places__card-pic-lg{
+    height: 354px; 
+    object-fit: cover;
+}
+
+.places__card-pic-sm{
+    height: 283px; 
+    object-fit: cover;
+}
+
+.places__card-pic{
+    height: 283px;
+    width: 100%;
+    object-fit: cover; /*Что-то с масштабированием изображения в контейнере*/
+    transition: 0.15;
+}
+
+
+.places__card-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+.places__card_size_sm{
+    grid-column: span 2;
+}
+
